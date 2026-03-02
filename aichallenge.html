@@ -1,0 +1,2017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNS iNNovation Hub — India's Boldest AI Challenge | Internship with ₹1 Crore Stipend</title>
+    <meta name="description" content="Join India's boldest AI challenge. 3 Phases. Ages 11-30. One winner gets an internship with ₹1 Crore stipend at SNS iHub. Join the waitlist now.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        :root {
+            --sns-saffron: #F5A623;
+            --sns-orange: #E8841A;
+            --sns-deep-orange: #D4690E;
+            --sns-navy: #0A1628;
+            --sns-dark: #060D18;
+            --sns-charcoal: #111827;
+            --sns-white: #FFFFFF;
+            --sns-light: #F0F4F8;
+            --sns-green: #22C55E;
+            --sns-green-dark: #16A34A;
+            --sns-blue: #3B82F6;
+            --sns-purple: #8B5CF6;
+            --sns-red: #EF4444;
+            --sns-cyan: #06B6D4;
+            --gradient-hero: linear-gradient(135deg, #0A1628 0%, #1A1040 40%, #0A1628 100%);
+            --gradient-saffron: linear-gradient(135deg, #F5A623, #E8841A);
+            --gradient-green: linear-gradient(135deg, #22C55E, #16A34A);
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--sns-dark);
+            color: var(--sns-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .text-saffron { color: var(--sns-saffron); }
+        .text-green { color: var(--sns-green); }
+        .text-muted { color: #94A3B8; }
+        .text-center { text-align: center; }
+        
+        /* Particles */
+        .particles {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            width: 3px; height: 3px;
+            background: var(--sns-saffron);
+            border-radius: 50%;
+            opacity: 0.15;
+            animation: float-particle linear infinite;
+        }
+        @keyframes float-particle {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.15; }
+            90% { opacity: 0.15; }
+            100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 12px 0;
+            background: rgba(6, 13, 24, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(245, 166, 35, 0.1);
+            transition: all 0.3s ease;
+        }
+        .navbar.scrolled {
+            padding: 8px 0;
+            background: rgba(6, 13, 24, 0.95);
+        }
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .nav-logo img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+        .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+        .nav-links a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--sns-saffron); }
+        .nav-cta {
+            background: var(--gradient-saffron);
+            color: var(--sns-dark) !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700 !important;
+            font-size: 13px !important;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(245, 166, 35, 0.3); color: var(--sns-dark) !important; }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px; height: 2px;
+            background: var(--sns-white);
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-hero);
+            padding: 120px 0 80px;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -30%;
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, rgba(245, 166, 35, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%; left: -20%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(245, 166, 35, 0.1);
+            border: 1px solid rgba(245, 166, 35, 0.25);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--sns-saffron);
+            margin-bottom: 32px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .hero-badge .pulse-dot {
+            width: 8px; height: 8px;
+            background: var(--sns-green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 6.5vw, 72px);
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+        }
+        .hero h1 .line-gold {
+            background: var(--gradient-saffron);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-stipend-line {
+            font-family: var(--font-display);
+            font-size: clamp(20px, 3vw, 30px);
+            font-weight: 500;
+            color: #CBD5E1;
+            margin: 16px 0 4px;
+            letter-spacing: 0.5px;
+        }
+        .hero-stipend {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8.5vw, 100px);
+            font-weight: 700;
+            line-height: 1;
+            margin: 0 0 28px;
+            letter-spacing: -3px;
+            background: linear-gradient(135deg, #F5A623 0%, #FFD700 50%, #F5A623 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s linear infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+        .hero-sub {
+            font-size: clamp(16px, 2.2vw, 20px);
+            color: #94A3B8;
+            margin-bottom: 48px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        .hero-sub strong { color: var(--sns-white); font-weight: 600; }
+
+        /* WhatsApp OTP Form */
+        .waitlist-form {
+            max-width: 580px;
+            margin: 0 auto 20px;
+        }
+        .waitlist-form-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .input-group {
+            flex: 1;
+            display: flex;
+            background: rgba(255,255,255, 0.06);
+            border: 1px solid rgba(255,255,255, 0.12);
+            border-radius: 60px;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+        .input-group:focus-within { border-color: var(--sns-saffron); }
+        .country-code {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0 4px 0 18px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #94A3B8;
+            white-space: nowrap;
+            border-right: 1px solid rgba(255,255,255,0.08);
+            user-select: none;
+        }
+        .country-code .flag { font-size: 18px; }
+        .input-group input {
+            flex: 1;
+            padding: 16px 18px;
+            background: transparent;
+            border: none;
+            color: var(--sns-white);
+            font-size: 16px;
+            font-family: var(--font-body);
+            outline: none;
+            min-width: 0;
+        }
+        .input-group input::placeholder { color: #64748B; }
+        .waitlist-form button.btn-primary {
+            padding: 16px 32px;
+            background: var(--gradient-saffron);
+            border: none;
+            border-radius: 60px;
+            color: var(--sns-dark);
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .waitlist-form button.btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(245, 166, 35, 0.35);
+        }
+        .waitlist-form button.btn-primary .wa-icon { font-size: 20px; }
+
+        /* OTP Section */
+        .otp-section {
+            display: none;
+            max-width: 580px;
+            margin: 0 auto 20px;
+        }
+        .otp-section.active { display: block; }
+        .otp-inputs {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        .otp-inputs input {
+            width: 52px; height: 58px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 14px;
+            text-align: center;
+            font-size: 24px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--sns-white);
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .otp-inputs input:focus { border-color: var(--sns-saffron); }
+        .otp-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+        .otp-actions button {
+            padding: 14px 32px;
+            border-radius: 60px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+        }
+        .btn-verify {
+            background: var(--gradient-green);
+            color: var(--sns-dark);
+        }
+        .btn-verify:hover { box-shadow: 0 8px 30px rgba(34, 197, 94, 0.3); transform: translateY(-2px); }
+        .btn-resend {
+            background: transparent;
+            color: #64748B;
+            text-decoration: underline;
+            padding: 14px 16px;
+        }
+        .btn-resend:hover { color: var(--sns-saffron); }
+        .otp-info {
+            text-align: center;
+            font-size: 14px;
+            color: #64748B;
+            margin-bottom: 16px;
+        }
+        .otp-info strong { color: var(--sns-green); }
+
+        /* Success State */
+        .success-state {
+            display: none;
+            text-align: center;
+            max-width: 580px;
+            margin: 0 auto 20px;
+        }
+        .success-state.active { display: block; }
+        .success-check {
+            width: 72px; height: 72px;
+            background: rgba(34, 197, 94, 0.15);
+            border: 2px solid var(--sns-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 16px;
+            animation: pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes pop {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+        .success-state h3 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: var(--sns-green);
+        }
+        .success-state p { color: #94A3B8; font-size: 15px; }
+
+        .waitlist-meta {
+            font-size: 13px;
+            color: #64748B;
+            text-align: center;
+        }
+        .waitlist-meta .wa-green { color: #25D366; font-weight: 600; }
+        .waitlist-counter {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--sns-green);
+            margin-top: 16px;
+        }
+        .waitlist-counter .counter-dot {
+            width: 6px; height: 6px;
+            background: var(--sns-green);
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 64px;
+            padding-top: 48px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .hero-stat { text-align: center; }
+        .hero-stat-value {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--sns-white);
+        }
+        .hero-stat-label {
+            font-size: 13px;
+            color: #64748B;
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== SECTIONS ===== */
+        section { position: relative; z-index: 1; padding: 100px 0; }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: var(--sns-saffron);
+            margin-bottom: 16px;
+        }
+        .section-label::before {
+            content: '';
+            width: 24px; height: 2px;
+            background: var(--sns-saffron);
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+        }
+        .section-desc {
+            font-size: 18px;
+            color: #94A3B8;
+            max-width: 640px;
+            line-height: 1.7;
+        }
+        .section-desc.centered { margin: 0 auto; }
+
+        /* ===== WHO IS THIS FOR ===== */
+        .who-section { background: var(--sns-dark); }
+        .who-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 56px;
+        }
+        .who-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 36px 28px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .who-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--gradient-saffron);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        .who-card:hover::before { transform: scaleX(1); }
+        .who-card:hover {
+            background: rgba(245, 166, 35, 0.04);
+            border-color: rgba(245, 166, 35, 0.15);
+            transform: translateY(-8px);
+        }
+        .who-icon {
+            width: 64px; height: 64px;
+            background: rgba(245, 166, 35, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+        }
+        .who-card h3 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .who-card p {
+            font-size: 14px;
+            color: #94A3B8;
+            line-height: 1.6;
+        }
+
+        /* ===== MARQUEE ===== */
+        .marquee-section {
+            padding: 40px 0;
+            background: rgba(245, 166, 35, 0.03);
+            border-top: 1px solid rgba(245, 166, 35, 0.08);
+            border-bottom: 1px solid rgba(245, 166, 35, 0.08);
+            overflow: hidden;
+        }
+        .marquee-track {
+            display: flex;
+            gap: 48px;
+            animation: marquee 40s linear infinite;
+            width: max-content;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-item {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 500;
+            color: #64748B;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .marquee-item span { color: var(--sns-saffron); font-size: 8px; }
+
+        /* ===== PHASES ===== */
+        .phases-section {
+            background: linear-gradient(180deg, var(--sns-dark) 0%, var(--sns-charcoal) 100%);
+        }
+        .phase-timeline {
+            margin-top: 64px;
+            position: relative;
+        }
+        .phase-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0; bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--sns-saffron) 0%, var(--sns-purple) 50%, var(--sns-green) 100%);
+            transform: translateX(-50%);
+        }
+        .phase-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 60px;
+            margin-bottom: 80px;
+            position: relative;
+        }
+        .phase-item:last-child { margin-bottom: 0; }
+        .phase-item:nth-child(even) { flex-direction: row-reverse; }
+        .phase-number-col {
+            flex: 0 0 50%;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 40px;
+        }
+        .phase-item:nth-child(even) .phase-number-col {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 40px;
+        }
+        .phase-content-col {
+            flex: 0 0 50%;
+            padding-left: 40px;
+        }
+        .phase-item:nth-child(even) .phase-content-col {
+            padding-left: 0;
+            padding-right: 40px;
+            text-align: right;
+        }
+        .phase-dot {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+        .phase-dot::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 2px solid;
+            opacity: 0.3;
+        }
+        .phase-1 .phase-dot { background: var(--sns-saffron); }
+        .phase-1 .phase-dot::after { border-color: var(--sns-saffron); }
+        .phase-2 .phase-dot { background: var(--sns-purple); }
+        .phase-2 .phase-dot::after { border-color: var(--sns-purple); }
+        .phase-3 .phase-dot { background: var(--sns-green); }
+        .phase-3 .phase-dot::after { border-color: var(--sns-green); }
+
+        .phase-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 40px;
+            transition: all 0.4s ease;
+        }
+        .phase-card:hover {
+            border-color: rgba(245, 166, 35, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .phase-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+        }
+        .phase-1 .phase-tag { background: rgba(245, 166, 35, 0.15); color: var(--sns-saffron); }
+        .phase-2 .phase-tag { background: rgba(139, 92, 246, 0.15); color: var(--sns-purple); }
+        .phase-3 .phase-tag { background: rgba(34, 197, 94, 0.15); color: var(--sns-green); }
+        .phase-card h3 {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .phase-card p {
+            color: #94A3B8;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        .track-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .phase-item:nth-child(even) .track-chips { justify-content: flex-end; }
+        .track-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #CBD5E1;
+            transition: all 0.3s;
+        }
+        .track-chip:hover {
+            background: rgba(245, 166, 35, 0.1);
+            border-color: rgba(245, 166, 35, 0.3);
+            color: var(--sns-saffron);
+        }
+        .track-chip .chip-icon { font-size: 16px; }
+
+        /* ===== PRICING ===== */
+        .pricing-section { background: var(--sns-charcoal); }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 56px;
+            margin-bottom: 48px;
+        }
+        .pricing-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 40px 32px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .pricing-card.featured {
+            background: rgba(245, 166, 35, 0.05);
+            border-color: rgba(245, 166, 35, 0.3);
+            transform: scale(1.05);
+        }
+        .pricing-card.featured::before {
+            content: 'BEST VALUE';
+            position: absolute;
+            top: 18px; right: -32px;
+            background: var(--gradient-saffron);
+            color: var(--sns-dark);
+            font-size: 10px;
+            font-weight: 800;
+            padding: 4px 40px;
+            transform: rotate(45deg);
+            letter-spacing: 1px;
+        }
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(245, 166, 35, 0.2);
+        }
+        .pricing-card.featured:hover { transform: scale(1.05) translateY(-8px); }
+        .pricing-tier {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--sns-saffron);
+            margin-bottom: 8px;
+        }
+        .pricing-card h3 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            margin-bottom: 24px;
+            color: #CBD5E1;
+        }
+        .pricing-amount {
+            font-family: var(--font-display);
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            line-height: 1;
+        }
+        .pricing-amount .currency { font-size: 24px; vertical-align: super; color: #94A3B8; }
+        .pricing-amount.free { color: var(--sns-green); }
+        .pricing-label {
+            font-size: 14px;
+            color: #64748B;
+            margin-bottom: 32px;
+        }
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 32px;
+        }
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 14px;
+            color: #94A3B8;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .pricing-features li .check { color: var(--sns-green); font-weight: bold; flex-shrink: 0; }
+        .pricing-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 14px 24px;
+            border-radius: 60px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+        .pricing-btn.primary {
+            background: var(--gradient-saffron);
+            color: var(--sns-dark);
+        }
+        .pricing-btn.primary:hover {
+            box-shadow: 0 8px 30px rgba(245, 166, 35, 0.35);
+            transform: translateY(-2px);
+        }
+        .pricing-btn.secondary {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: var(--sns-white);
+        }
+        .pricing-btn.secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(245, 166, 35, 0.3);
+        }
+
+        .bootcamp-note {
+            background: rgba(139, 92, 246, 0.08);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 16px;
+            padding: 32px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+        }
+        .bootcamp-note-text h4 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .bootcamp-note-text p { color: #94A3B8; font-size: 15px; }
+        .bootcamp-price {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--sns-purple);
+            white-space: nowrap;
+        }
+
+        /* ===== ECOSYSTEM ===== */
+        .ecosystem-section { background: var(--sns-dark); }
+        .eco-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 56px;
+        }
+        .eco-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 36px;
+            transition: all 0.4s ease;
+        }
+        .eco-card:hover {
+            border-color: rgba(245, 166, 35, 0.15);
+            transform: translateY(-6px);
+        }
+        .eco-card-icon {
+            width: 48px; height: 48px;
+            background: rgba(245, 166, 35, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        .eco-card h4 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .eco-card p {
+            font-size: 14px;
+            color: #94A3B8;
+            line-height: 1.7;
+        }
+
+        /* ===== 3C COMPETENCY CIRCLE ===== */
+        .competency-section {
+            background: linear-gradient(180deg, var(--sns-dark), var(--sns-charcoal));
+            overflow: hidden;
+        }
+        .competency-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-top: 56px;
+        }
+        /* Interactive SVG Circle */
+        .circle-visual {
+            position: relative;
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        .circle-visual svg {
+            width: 100%;
+            height: auto;
+        }
+        .circle-center-text {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .circle-center-text h4 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--sns-white);
+            margin-bottom: 4px;
+        }
+        .circle-center-text p {
+            font-size: 12px;
+            color: #94A3B8;
+        }
+        .competency-details h3 {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            line-height: 1.2;
+        }
+        .comp-item {
+            display: flex;
+            gap: 20px;
+            padding: 24px;
+            margin-bottom: 16px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            transition: all 0.4s ease;
+            cursor: default;
+        }
+        .comp-item:hover {
+            background: rgba(245, 166, 35, 0.04);
+            border-color: rgba(245, 166, 35, 0.2);
+            transform: translateX(8px);
+        }
+        .comp-item:nth-child(2):hover {
+            background: rgba(59, 130, 246, 0.04);
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+        .comp-item:nth-child(3):hover {
+            background: rgba(34, 197, 94, 0.04);
+            border-color: rgba(34, 197, 94, 0.2);
+        }
+        .comp-icon {
+            width: 52px; height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        .comp-icon.attitude { background: rgba(245, 166, 35, 0.12); }
+        .comp-icon.technical { background: rgba(59, 130, 246, 0.12); }
+        .comp-icon.logical { background: rgba(34, 197, 94, 0.12); }
+        .comp-text h4 {
+            font-family: var(--font-display);
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .comp-text p {
+            font-size: 14px;
+            color: #94A3B8;
+            line-height: 1.6;
+        }
+        .comp-text .comp-tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+        .comp-text .comp-tag {
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        .comp-tag.att { background: rgba(245, 166, 35, 0.1); color: var(--sns-saffron); }
+        .comp-tag.tech { background: rgba(59, 130, 246, 0.1); color: var(--sns-blue); }
+        .comp-tag.log { background: rgba(34, 197, 94, 0.1); color: var(--sns-green); }
+
+        /* ===== 3P + 5 PILLARS ===== */
+        .pillars-section {
+            background: var(--sns-charcoal);
+        }
+        .pillars-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            margin-top: 56px;
+        }
+        .pillar-block h3 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        .pillar-list { list-style: none; }
+        .pillar-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .pillar-list li:last-child { border-bottom: none; }
+        .pillar-icon {
+            width: 40px; height: 40px;
+            background: rgba(245, 166, 35, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .pillar-text h4 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .pillar-text p { font-size: 13px; color: #94A3B8; }
+
+        /* ===== FAQ ===== */
+        .faq-section { background: linear-gradient(180deg, var(--sns-charcoal), var(--sns-dark)); }
+        .faq-grid { max-width: 780px; margin: 56px auto 0; }
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 24px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            text-align: left;
+        }
+        .faq-question h4 {
+            font-family: var(--font-display);
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--sns-white);
+            padding-right: 20px;
+        }
+        .faq-toggle {
+            width: 32px; height: 32px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sns-saffron);
+            font-size: 20px;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+        .faq-item.open .faq-toggle { transform: rotate(45deg); }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .faq-item.open .faq-answer { max-height: 300px; }
+        .faq-answer p {
+            padding-bottom: 24px;
+            font-size: 15px;
+            color: #94A3B8;
+            line-height: 1.7;
+        }
+
+        /* ===== CTA ===== */
+        .cta-section {
+            background: var(--sns-dark);
+            padding: 100px 0;
+        }
+        .cta-box {
+            background: linear-gradient(135deg, rgba(245, 166, 35, 0.1), rgba(139, 92, 246, 0.08));
+            border: 1px solid rgba(245, 166, 35, 0.2);
+            border-radius: 32px;
+            padding: 80px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -100px; right: -100px;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(245, 166, 35, 0.1), transparent);
+            border-radius: 50%;
+        }
+        .cta-box h2 {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+            position: relative;
+        }
+        .cta-box p.cta-sub {
+            font-size: 18px;
+            color: #94A3B8;
+            margin-bottom: 40px;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--sns-dark);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 60px 0 32px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        .footer-brand-logo {
+            height: 56px;
+            width: auto;
+            margin-bottom: 12px;
+        }
+        .footer-brand p {
+            font-size: 14px;
+            color: #64748B;
+            margin-top: 8px;
+            line-height: 1.7;
+        }
+        .footer-col h5 {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--sns-white);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-col a {
+            display: block;
+            color: #64748B;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 6px 0;
+            transition: color 0.3s;
+        }
+        .footer-col a:hover { color: var(--sns-saffron); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-bottom p { font-size: 13px; color: #475569; }
+        .footer-locations {
+            display: flex;
+            gap: 16px;
+        }
+        .footer-locations span {
+            font-size: 12px;
+            color: #475569;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            background: var(--sns-charcoal);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 16px;
+            padding: 20px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 9999;
+            transform: translateY(150%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        .toast.show { transform: translateY(0); }
+        .toast-icon {
+            width: 40px; height: 40px;
+            background: rgba(34, 197, 94, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .toast-text strong { display: block; font-size: 14px; color: var(--sns-white); }
+        .toast-text span { font-size: 13px; color: #94A3B8; }
+
+        /* ===== SCROLL REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section[id] { scroll-margin-top: 80px; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .who-grid { grid-template-columns: repeat(2, 1fr); }
+            .eco-grid { grid-template-columns: repeat(2, 1fr); }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+            .pricing-card.featured { transform: none; }
+            .pricing-card.featured:hover { transform: translateY(-8px); }
+            .competency-layout { grid-template-columns: 1fr; gap: 48px; }
+            .circle-visual { max-width: 380px; }
+            .pillars-wrapper { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0; right: 0;
+                background: rgba(6, 13, 24, 0.98);
+                padding: 24px;
+                gap: 16px;
+                border-bottom: 1px solid rgba(245, 166, 35, 0.1);
+            }
+            .hero { padding: 100px 0 60px; min-height: auto; }
+            .hero-stats { flex-direction: column; gap: 24px; }
+            .waitlist-form-row { flex-direction: column; }
+            .who-grid { grid-template-columns: 1fr; }
+            .eco-grid { grid-template-columns: 1fr; }
+
+            .phase-timeline::before { left: 20px; }
+            .phase-item, .phase-item:nth-child(even) {
+                flex-direction: column;
+                gap: 0;
+                padding-left: 50px;
+            }
+            .phase-number-col, .phase-item:nth-child(even) .phase-number-col { display: none; }
+            .phase-content-col, .phase-item:nth-child(even) .phase-content-col {
+                flex: 1;
+                padding: 0;
+                text-align: left;
+            }
+            .phase-item:nth-child(even) .track-chips { justify-content: flex-start; }
+            .phase-dot, .phase-1 .phase-dot, .phase-2 .phase-dot, .phase-3 .phase-dot {
+                left: 20px;
+                top: 10px;
+            }
+            .bootcamp-note {
+                flex-direction: column;
+                text-align: center;
+                padding: 28px;
+            }
+            .cta-box { padding: 48px 24px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+            .otp-inputs input { width: 44px; height: 50px; font-size: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Particles -->
+<div class="particles" id="particles"></div>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <a href="#" class="nav-logo">
+            <img src="https://snsgroups.com/sns.png" alt="SNS iNNovation Hub" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="display:none; align-items:center; gap:8px;">
+                <div style="width:40px;height:40px;background:var(--gradient-saffron);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:14px;color:var(--sns-dark);">SNS</div>
+                <div style="font-family:var(--font-display);font-size:16px;font-weight:600;color:var(--sns-white);">iHub</div>
+            </div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#challenge">The Challenge</a></li>
+            <li><a href="#phases">3 Phases</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+           
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#waitlist" class="nav-cta">Join Waitlist</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                Waitlist Now Open — Pan India — Ages 11 to 30
+            </div>
+            <h1>
+                India's Boldest<br>
+                <span class="line-gold">AI Challenge.</span>
+            </h1>
+            <div class="hero-stipend-line">Win an Internship with</div>
+            <div class="hero-stipend">&#8377;1 CRORE Stipend</div>
+            <p class="hero-sub">
+                One challenge. Three phases. <strong>One winner gets an internship with ₹1 Crore stipend</strong> at SNS iHub.<br>
+                Open to ages 11–30 across India. Early birds pay nothing.
+            </p>
+
+            <!-- WhatsApp Number Form -->
+            <div id="formState">
+                <div class="waitlist-form" id="waitlistFormHero">
+                    <div class="waitlist-form-row">
+                        <div class="input-group">
+                            <div class="country-code">
+                                <span class="flag">&#127470;&#127475;</span>
+                                +91
+                            </div>
+                            <input type="tel" id="phoneInput" placeholder="Enter your WhatsApp number" maxlength="10" pattern="[0-9]{10}" required>
+                        </div>
+                        <button class="btn-primary" type="button" onclick="sendOTP()">
+                            <span class="wa-icon">&#128172;</span>
+                            Get OTP
+                        </button>
+                    </div>
+                </div>
+                <p class="waitlist-meta">OTP will be sent to your <span class="wa-green">WhatsApp</span>. We'll never spam you.</p>
+            </div>
+
+            <!-- OTP Verification -->
+            <div class="otp-section" id="otpState">
+                <p class="otp-info">OTP sent to <strong id="otpPhone">+91 98765 43210</strong> via WhatsApp</p>
+                <div class="otp-inputs">
+                    <input type="text" maxlength="1" class="otp-digit" oninput="otpAutoFocus(this)" onkeydown="otpBackspace(event, this)">
+                    <input type="text" maxlength="1" class="otp-digit" oninput="otpAutoFocus(this)" onkeydown="otpBackspace(event, this)">
+                    <input type="text" maxlength="1" class="otp-digit" oninput="otpAutoFocus(this)" onkeydown="otpBackspace(event, this)">
+                    <input type="text" maxlength="1" class="otp-digit" oninput="otpAutoFocus(this)" onkeydown="otpBackspace(event, this)">
+                    <input type="text" maxlength="1" class="otp-digit" oninput="otpAutoFocus(this)" onkeydown="otpBackspace(event, this)">
+                    <input type="text" maxlength="1" class="otp-digit" oninput="otpAutoFocus(this)" onkeydown="otpBackspace(event, this)">
+                </div>
+                <div class="otp-actions">
+                    <button class="btn-verify" onclick="verifyOTP()">Verify & Join Waitlist</button>
+                    <button class="btn-resend" id="resendBtn" onclick="resendOTP()" disabled>Resend in <span id="resendTimer">30</span>s</button>
+                </div>
+                <p class="waitlist-meta" style="margin-top:16px;">
+                    <a href="#" onclick="changeNumber(event)" style="color: var(--sns-saffron); text-decoration:underline; font-size:13px;">Change number</a>
+                </p>
+            </div>
+
+            <!-- Success State -->
+            <div class="success-state" id="successState">
+                <div class="success-check">&#10003;</div>
+                <h3>You're on the Waitlist!</h3>
+                <p>Check your WhatsApp for confirmation. Your position: <strong style="color: var(--sns-saffron);">#<span id="userPosition">12,848</span></strong></p>
+            </div>
+
+            <div class="waitlist-counter">
+                <span class="counter-dot"></span>
+                <span id="liveCounter">12,847</span> people on the waitlist
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value">11–30</div>
+                    <div class="hero-stat-label">Age Group</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">4</div>
+                    <div class="hero-stat-label">Challenge Tracks</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">100</div>
+                    <div class="hero-stat-label">Day Bootcamp</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">₹1Cr</div>
+                    <div class="hero-stat-label">Internship Stipend</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHO IS THIS FOR ===== -->
+<section class="who-section" id="challenge">
+    <div class="container">
+        <div class="text-center reveal">
+            <span class="section-label">Who Is This For</span>
+            <h2 class="section-title">Not Just for Coders.<br><span class="text-saffron">For India's Sharpest Minds.</span></h2>
+            <p class="section-desc centered">Whether you're cracking JEE, preparing for UPSC, dreaming of banking, or building code — this challenge finds the best and transforms them into AI-powered leaders.</p>
+        </div>
+        <div class="who-grid reveal">
+            <div class="who-card">
+                <div class="who-icon">&#128187;</div>
+                <h3>Tech Track</h3>
+                <p>DSA, System Design, Competitive Coding — the builders and architects of tomorrow's tech.</p>
+            </div>
+            <div class="who-card">
+                <div class="who-icon">&#129514;</div>
+                <h3>JEE / NEET Track</h3>
+                <p>Engineering & medical aspirants ready to add AI to their arsenal before college even starts.</p>
+            </div>
+            <div class="who-card">
+                <div class="who-icon">&#127963;</div>
+                <h3>Govt Exams Track</h3>
+                <p>UPSC, SSB, Defense, Railways — future administrators who'll govern with AI intelligence.</p>
+            </div>
+            <div class="who-card">
+                <div class="who-icon">&#127974;</div>
+                <h3>Banking Track</h3>
+                <p>IBPS, SBI, RBI aspirants preparing for the AI-driven future of BFSI and FinTech.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee-section">
+    <div class="marquee-track">
+        <div class="marquee-item"><span>&#9670;</span> Smart City & Manufacturing</div>
+        <div class="marquee-item"><span>&#9670;</span> Healthcare AI</div>
+        <div class="marquee-item"><span>&#9670;</span> Agriculture & Food Tech</div>
+        <div class="marquee-item"><span>&#9670;</span> Retail & FMCG</div>
+        <div class="marquee-item"><span>&#9670;</span> Automotive & Aerospace</div>
+        <div class="marquee-item"><span>&#9670;</span> Defense & Govt</div>
+        <div class="marquee-item"><span>&#9670;</span> Real Estate</div>
+        <div class="marquee-item"><span>&#9670;</span> Sports & Media</div>
+        <div class="marquee-item"><span>&#9670;</span> BFSI & FinTech</div>
+        <div class="marquee-item"><span>&#9670;</span> Energy & Power</div>
+        <div class="marquee-item"><span>&#9670;</span> EdTech & HR Tech</div>
+        <div class="marquee-item"><span>&#9670;</span> Robotics & Automation</div>
+        <div class="marquee-item"><span>&#9670;</span> AR / VR</div>
+        <div class="marquee-item"><span>&#9670;</span> Data Science / AI / ML</div>
+        <div class="marquee-item"><span>&#9670;</span> IoT & Cybersecurity</div>
+        <div class="marquee-item"><span>&#9670;</span> Additive Manufacturing</div>
+        <div class="marquee-item"><span>&#9670;</span> Low Code / No Code</div>
+        <!-- Duplicate for seamless loop -->
+        <div class="marquee-item"><span>&#9670;</span> Smart City & Manufacturing</div>
+        <div class="marquee-item"><span>&#9670;</span> Healthcare AI</div>
+        <div class="marquee-item"><span>&#9670;</span> Agriculture & Food Tech</div>
+        <div class="marquee-item"><span>&#9670;</span> Retail & FMCG</div>
+        <div class="marquee-item"><span>&#9670;</span> Automotive & Aerospace</div>
+        <div class="marquee-item"><span>&#9670;</span> Defense & Govt</div>
+        <div class="marquee-item"><span>&#9670;</span> Real Estate</div>
+        <div class="marquee-item"><span>&#9670;</span> Sports & Media</div>
+        <div class="marquee-item"><span>&#9670;</span> BFSI & FinTech</div>
+        <div class="marquee-item"><span>&#9670;</span> Energy & Power</div>
+        <div class="marquee-item"><span>&#9670;</span> EdTech & HR Tech</div>
+        <div class="marquee-item"><span>&#9670;</span> Robotics & Automation</div>
+        <div class="marquee-item"><span>&#9670;</span> AR / VR</div>
+        <div class="marquee-item"><span>&#9670;</span> Data Science / AI / ML</div>
+        <div class="marquee-item"><span>&#9670;</span> IoT & Cybersecurity</div>
+        <div class="marquee-item"><span>&#9670;</span> Additive Manufacturing</div>
+        <div class="marquee-item"><span>&#9670;</span> Low Code / No Code</div>
+    </div>
+</div>
+
+<!-- ===== 3 PHASES ===== -->
+<section class="phases-section" id="phases">
+    <div class="container">
+        <div class="text-center reveal">
+            <span class="section-label">The Journey</span>
+            <h2 class="section-title">3 Phases. 1 Winner.<br><span class="text-saffron">Zero Shortcuts.</span></h2>
+            <p class="section-desc centered">This isn't a course you watch — it's a gauntlet you survive. Each phase filters for grit, skill, and the ability to build with AI. One winner walks away with an internship carrying a ₹1 Crore stipend.</p>
+        </div>
+
+        <div class="phase-timeline">
+            <!-- Phase 1 -->
+            <div class="phase-item phase-1 reveal">
+                <div class="phase-number-col">
+                    <div style="text-align:right;">
+                        <div style="font-family: var(--font-display); font-size: 120px; font-weight: 700; color: rgba(245,166,35,0.08); line-height:1;">01</div>
+                    </div>
+                </div>
+                <div class="phase-dot"></div>
+                <div class="phase-content-col">
+                    <div class="phase-card">
+                        <span class="phase-tag">Phase 1</span>
+                        <h3>The Challenge — Choose Your Arena</h3>
+                        <p>A rigorous online challenge designed to test your domain mastery. Pick the track that matches your fire. Top performers advance to Phase 2.</p>
+                        <div class="track-chips">
+                            <span class="track-chip"><span class="chip-icon">&#128187;</span> Tech — DSA, System Design, Coding</span>
+                            <span class="track-chip"><span class="chip-icon">&#128218;</span> JEE / NEET</span>
+                            <span class="track-chip"><span class="chip-icon">&#127963;</span> UPSC / SSB / Defense / Railways</span>
+                            <span class="track-chip"><span class="chip-icon">&#127974;</span> Banking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="phase-item phase-2 reveal">
+                <div class="phase-number-col">
+                    <div>
+                        <div style="font-family: var(--font-display); font-size: 120px; font-weight: 700; color: rgba(139,92,246,0.08); line-height:1;">02</div>
+                    </div>
+                </div>
+                <div class="phase-dot"></div>
+                <div class="phase-content-col">
+                    <div class="phase-card">
+                        <span class="phase-tag">Phase 2 — 100 Days</span>
+                        <h3>The Bootcamp — Gen AI & Agentic AI</h3>
+                        <p>100 days of intense, hands-on training in Generative AI and Agentic AI. You won't just learn frameworks — you'll build autonomous agents, ship real prototypes, and think like an AI entrepreneur. This is where common minds get redesigned.</p>
+                        <div class="track-chips">
+                            <span class="track-chip"><span class="chip-icon">&#129302;</span> Agentic AI Architecture</span>
+                            <span class="track-chip"><span class="chip-icon">&#128161;</span> GenAI Frameworks</span>
+                            <span class="track-chip"><span class="chip-icon">&#128736;</span> Real-World Projects</span>
+                            <span class="track-chip"><span class="chip-icon">&#127891;</span> Industry Mentorship</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="phase-item phase-3 reveal">
+                <div class="phase-number-col">
+                    <div style="text-align:right;">
+                        <div style="font-family: var(--font-display); font-size: 120px; font-weight: 700; color: rgba(34,197,94,0.08); line-height:1;">03</div>
+                    </div>
+                </div>
+                <div class="phase-dot"></div>
+                <div class="phase-content-col">
+                    <div class="phase-card">
+                        <span class="phase-tag">Phase 3 — The Finale</span>
+                        <h3>One-Day Hack — Prove It Live</h3>
+                        <p>The ultimate pressure test. One day. One problem statement. Build a working AI solution in front of judges and industry leaders. The winner receives a 1-year internship at SNS iHub / SNS Square with a ₹1 Crore stipend.</p>
+                        <div class="track-chips">
+                            <span class="track-chip" style="border-color: rgba(34,197,94,0.3); color: var(--sns-green);"><span class="chip-icon">&#127942;</span> Internship with ₹1 Crore Stipend</span>
+                            <span class="track-chip"><span class="chip-icon">&#128188;</span> 1 Year @ SNS iHub / SNS Square</span>
+                            <span class="track-chip"><span class="chip-icon">&#127758;</span> Remote & Onsite Options</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="pricing-section" id="pricing">
+    <div class="container">
+        <div class="text-center reveal">
+            <span class="section-label">Pricing</span>
+            <h2 class="section-title">Early Birds Pay Nothing.<br><span class="text-saffron">Late Birds Pay Attention.</span></h2>
+            <p class="section-desc centered">We reward action. The earlier you sign up, the less you pay. Phase 1 registration pricing below — bootcamp fees are separate.</p>
+        </div>
+
+        <div class="pricing-grid reveal">
+            <div class="pricing-card featured">
+                <div class="pricing-tier">Early Bird</div>
+                <h3>For the Fast Movers</h3>
+                <div class="pricing-amount free">FREE</div>
+                <div class="pricing-label">₹0 — Zero. Nada. Nothing.</div>
+                <ul class="pricing-features">
+                    <li><span class="check">&#10003;</span> Phase 1 Challenge Access</li>
+                    <li><span class="check">&#10003;</span> Early community access</li>
+                    <li><span class="check">&#10003;</span> Priority waitlist position</li>
+                    <li><span class="check">&#10003;</span> Exclusive prep resources</li>
+                    <li><span class="check">&#10003;</span> Early bird badge & certificate</li>
+                </ul>
+                <button class="pricing-btn primary" onclick="scrollToWaitlist()">Join Free — Limited Slots</button>
+            </div>
+            <div class="pricing-card">
+                <div class="pricing-tier">Mid Level</div>
+                <h3>Still Ahead of the Crowd</h3>
+                <div class="pricing-amount"><span class="currency">₹</span>500</div>
+                <div class="pricing-label">One-time registration fee</div>
+                <ul class="pricing-features">
+                    <li><span class="check">&#10003;</span> Phase 1 Challenge Access</li>
+                    <li><span class="check">&#10003;</span> Community access</li>
+                    <li><span class="check">&#10003;</span> Standard waitlist position</li>
+                    <li><span class="check">&#10003;</span> Prep resource kit</li>
+                    <li><span class="check">&#10003;</span> Participation certificate</li>
+                </ul>
+                <button class="pricing-btn secondary" onclick="scrollToWaitlist()">Register — ₹500</button>
+            </div>
+            <div class="pricing-card">
+                <div class="pricing-tier">Regular</div>
+                <h3>Better Late Than Never</h3>
+                <div class="pricing-amount"><span class="currency">₹</span>1,000</div>
+                <div class="pricing-label">Standard registration fee</div>
+                <ul class="pricing-features">
+                    <li><span class="check">&#10003;</span> Phase 1 Challenge Access</li>
+                    <li><span class="check">&#10003;</span> Community access</li>
+                    <li><span class="check">&#10003;</span> General waitlist position</li>
+                    <li><span class="check">&#10003;</span> Basic resource kit</li>
+                    <li><span class="check">&#10003;</span> Participation certificate</li>
+                </ul>
+                <button class="pricing-btn secondary" onclick="scrollToWaitlist()">Register — ₹1,000</button>
+            </div>
+        </div>
+
+        <div class="bootcamp-note reveal">
+            <div class="bootcamp-note-text">
+                <h4>Phase 2 — 100-Day Bootcamp Fees</h4>
+                <p>Separate from registration. Covers mentorship, tools, projects, and certification. Pricing based on track and scholarship tier.</p>
+            </div>
+            <div class="bootcamp-price">₹1 — ₹15,000</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== FAQ ===== -->
+<section class="faq-section" id="faq">
+    <div class="container">
+        <div class="text-center reveal">
+            <span class="section-label">Questions</span>
+            <h2 class="section-title">Got Questions?<br><span class="text-saffron">We've Got Answers.</span></h2>
+        </div>
+        <div class="faq-grid reveal">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Who can participate? Is there an age limit?</h4>
+                    <div class="faq-toggle">+</div>
+                </button>
+                <div class="faq-answer">
+                    <p>Anyone aged 11 to 30 across India. School students, graduates, working professionals, self-taught learners — all welcome. All you need is fire in the belly.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Do I need a technical background for the Tech track?</h4>
+                    <div class="faq-toggle">+</div>
+                </button>
+                <div class="faq-answer">
+                    <p>For the Tech track (DSA, System Design, Coding) — yes, foundational programming knowledge helps. For JEE/NEET, Govt Exams, and Banking tracks, Phase 1 is domain-specific. Phase 2 bootcamp teaches AI from the ground up regardless of your track.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <h4>What exactly is the ₹1 Crore stipend? Is it real?</h4>
+                    <div class="faq-toggle">+</div>
+                </button>
+                <div class="faq-answer">
+                    <p>100% real. The Phase 3 winner gets a 1-year internship at SNS iHub or SNS Square with a total stipend of ₹1 Crore. It's a working internship — you'll be building real AI solutions for SHAAARP industry verticals. Remote and onsite options across CBE, BLR, CHE, HYD, PUNE, and NCR Delhi.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Why do you collect my WhatsApp number?</h4>
+                    <div class="faq-toggle">+</div>
+                </button>
+                <div class="faq-answer">
+                    <p>All challenge updates, OTP verification, community access, and phase notifications happen via WhatsApp — it's faster, more personal, and ensures you never miss an update. We verify your number via OTP to keep the waitlist genuine. We will never spam you.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <h4>What does the waitlist mean? Am I guaranteed a spot?</h4>
+                    <div class="faq-toggle">+</div>
+                </button>
+                <div class="faq-answer">
+                    <p>Joining the waitlist secures your priority position. Early bird registrants (₹0 fee) get first access when Phase 1 opens. As slots fill, pricing moves to ₹500 and ₹1,000. The earlier you join, the better your position and the less you pay.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <h4>What's the 3C Competency Circle?</h4>
+                    <div class="faq-toggle">+</div>
+                </button>
+                <div class="faq-answer">
+                    <p>It's SNS Institutions' proprietary framework that develops three core competencies: Attitude (curiosity, accountability), Technical Domain Expertise (hard skills for today's tech world), and Logical & Business Acumen (problem-solving and practical thinking). When all three align, graduates become industry-ready innovators.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Can I participate remotely?</h4>
+                    <div class="faq-toggle">+</div>
+                </button>
+                <div class="faq-answer">
+                    <p>Phase 1 (Challenge) and Phase 2 (Bootcamp) support both remote and onsite modes. Phase 3 (One-Day Hack) will be held onsite at select locations. The final internship also offers remote and onsite options.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="cta-section" id="waitlist">
+    <div class="container">
+        <div class="cta-box reveal">
+            <h2>The Waitlist Is Open.<br><span class="text-saffron">Are You In?</span></h2>
+            <p class="cta-sub">12,847 people are already ahead of you. Every day you wait, the free slots shrink. Join now and pay nothing — or pay later and wish you hadn't.</p>
+
+            <!-- CTA WhatsApp Form -->
+            <div id="ctaFormState">
+                <div class="waitlist-form" style="position:relative;">
+                    <div class="waitlist-form-row">
+                        <div class="input-group">
+                            <div class="country-code">
+                                <span class="flag">&#127470;&#127475;</span>
+                                +91
+                            </div>
+                            <input type="tel" id="ctaPhoneInput" placeholder="Your WhatsApp number" maxlength="10" pattern="[0-9]{10}" required>
+                        </div>
+                        <button class="btn-primary" type="button" onclick="sendCTAOTP()">
+                            <span class="wa-icon">&#128172;</span>
+                            Get OTP
+                        </button>
+                    </div>
+                </div>
+                <p class="waitlist-meta" style="margin-top:8px;">Verified via <span class="wa-green">WhatsApp</span> OTP &middot; Sincerity. Nobility. Service.</p>
+            </div>
+
+            <div class="otp-section" id="ctaOtpState">
+                <p class="otp-info">OTP sent to <strong id="ctaOtpPhone">+91 98765 43210</strong> via WhatsApp</p>
+                <div class="otp-inputs">
+                    <input type="text" maxlength="1" class="otp-digit cta-otp" oninput="otpAutoFocus(this)" onkeydown="otpBackspace(event, this)">
+                    <input type="text" maxlength="1" class="otp-digit cta-otp" oninput="otpAutoFocus(this)" onkeydown="otpBackspace(event, this)">
+                    <input type="text" maxlength="1" class="otp-digit cta-otp" oninput="otpAutoFocus(this)" onkeydown="otpBackspace(event, this)">
+                    <input type="text" maxlength="1" class="otp-digit cta-otp" oninput="otpAutoFocus(this)" onkeydown="otpBackspace(event, this)">
+                    <input type="text" maxlength="1" class="otp-digit cta-otp" oninput="otpAutoFocus(this)" onkeydown="otpBackspace(event, this)">
+                    <input type="text" maxlength="1" class="otp-digit cta-otp" oninput="otpAutoFocus(this)" onkeydown="otpBackspace(event, this)">
+                </div>
+                <div class="otp-actions">
+                    <button class="btn-verify" onclick="verifyCTAOTP()">Verify & Join Waitlist</button>
+                    <button class="btn-resend" disabled>Resend in 30s</button>
+                </div>
+            </div>
+
+            <div class="success-state" id="ctaSuccessState">
+                <div class="success-check">&#10003;</div>
+                <h3>You're on the Waitlist!</h3>
+                <p>Check your WhatsApp for confirmation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="https://snsgroups.com/sns.png" alt="SNS iNNovation Hub" class="footer-brand-logo" onerror="this.style.display='none';">
+                <p>Redesigning common minds and business. Building entrepreneurial mindsets through design thinking. India's boldest AI challenge — backed by a mission to create 1000 AI startups in 10 years.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Challenge</h5>
+                <a href="#challenge">Who It's For</a>
+                <a href="#phases">3 Phases</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+            </div>
+         
+            <div class="footer-col">
+                <h5>Contact</h5>
+                <a href="tel:+919566423456">+91 95664 23456</a>
+                <a href="https://wa.me/919566423456" target="_blank">WhatsApp Us</a>
+                <a href="https://www.snsihub.ai" target="_blank">www.snsihub.ai</a>
+        
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SNS iNNovation Hub. All rights reserved.</p>
+            <div class="footer-locations">
+                <span>CBE</span>
+                <span>BLR</span>
+                <span>CHE</span>
+                <span>HYD</span>
+                <span>PUNE</span>
+                <span>NCR DELHI</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+    <div class="toast-icon">&#10003;</div>
+    <div class="toast-text">
+        <strong>You're on the waitlist!</strong>
+        <span>Check your WhatsApp for confirmation.</span>
+    </div>
+</div>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+    // === Particles ===
+    (function() {
+        const container = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDuration = (15 + Math.random() * 25) + 's';
+            p.style.animationDelay = Math.random() * 20 + 's';
+            p.style.width = p.style.height = (2 + Math.random() * 3) + 'px';
+            container.appendChild(p);
+        }
+    })();
+
+    // === Navbar scroll ===
+    window.addEventListener('scroll', () => {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // === Mobile menu ===
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+        document.getElementById('navLinks').classList.toggle('active');
+    });
+    document.querySelectorAll('#navLinks a').forEach(a => {
+        a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('active'));
+    });
+
+    // === Scroll reveal ===
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // === FAQ Toggle ===
+    function toggleFaq(btn) {
+        const item = btn.parentElement;
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+    }
+
+    // === OTP Auto Focus ===
+    function otpAutoFocus(input) {
+        input.value = input.value.replace(/[^0-9]/g, '');
+        if (input.value.length === 1 && input.nextElementSibling) {
+            input.nextElementSibling.focus();
+        }
+    }
+    function otpBackspace(e, input) {
+        if (e.key === 'Backspace' && input.value === '' && input.previousElementSibling) {
+            input.previousElementSibling.focus();
+        }
+    }
+
+    // === Phone validation ===
+    function isValidPhone(phone) {
+        return /^[6-9]\d{9}$/.test(phone);
+    }
+    function formatPhone(phone) {
+        return '+91 ' + phone.substring(0,5) + ' ' + phone.substring(5);
+    }
+
+    // === Hero OTP Flow ===
+    let resendInterval;
+
+    function sendOTP() {
+        const phone = document.getElementById('phoneInput').value.replace(/\D/g, '');
+        if (!isValidPhone(phone)) {
+            document.getElementById('phoneInput').style.borderColor = '#EF4444';
+            document.getElementById('phoneInput').focus();
+            setTimeout(() => { document.getElementById('phoneInput').parentElement.style.borderColor = ''; }, 2000);
+            return;
+        }
+        document.getElementById('otpPhone').textContent = formatPhone(phone);
+        document.getElementById('formState').style.display = 'none';
+        document.getElementById('otpState').classList.add('active');
+        document.querySelector('#otpState .otp-digit').focus();
+        startResendTimer();
+    }
+
+    function startResendTimer() {
+        let seconds = 30;
+        const timerEl = document.getElementById('resendTimer');
+        const btn = document.getElementById('resendBtn');
+        btn.disabled = true;
+        clearInterval(resendInterval);
+        resendInterval = setInterval(() => {
+            seconds--;
+            timerEl.textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(resendInterval);
+                btn.disabled = false;
+                btn.innerHTML = 'Resend OTP';
+            }
+        }, 1000);
+    }
+
+    function resendOTP() {
+        const btn = document.getElementById('resendBtn');
+        btn.innerHTML = 'Resend in <span id="resendTimer">30</span>s';
+        startResendTimer();
+    }
+
+    function changeNumber(e) {
+        e.preventDefault();
+        document.getElementById('otpState').classList.remove('active');
+        document.getElementById('formState').style.display = 'block';
+        document.getElementById('phoneInput').focus();
+        clearInterval(resendInterval);
+    }
+
+    function verifyOTP() {
+        const digits = document.querySelectorAll('#otpState .otp-digit');
+        let otp = '';
+        digits.forEach(d => otp += d.value);
+        if (otp.length < 6) {
+            digits.forEach(d => d.style.borderColor = '#EF4444');
+            setTimeout(() => digits.forEach(d => d.style.borderColor = ''), 2000);
+            return;
+        }
+        // Simulate verification
+        document.getElementById('otpState').classList.remove('active');
+        document.getElementById('successState').classList.add('active');
+        const counter = document.getElementById('liveCounter');
+        const current = parseInt(counter.textContent.replace(/,/g, ''));
+        const newCount = current + 1;
+        counter.textContent = newCount.toLocaleString();
+        document.getElementById('userPosition').textContent = newCount.toLocaleString();
+        showToast();
+    }
+
+    // === CTA OTP Flow ===
+    function sendCTAOTP() {
+        const phone = document.getElementById('ctaPhoneInput').value.replace(/\D/g, '');
+        if (!isValidPhone(phone)) {
+            document.getElementById('ctaPhoneInput').focus();
+            return;
+        }
+        document.getElementById('ctaOtpPhone').textContent = formatPhone(phone);
+        document.getElementById('ctaFormState').style.display = 'none';
+        document.getElementById('ctaOtpState').classList.add('active');
+        document.querySelector('#ctaOtpState .otp-digit').focus();
+    }
+
+    function verifyCTAOTP() {
+        const digits = document.querySelectorAll('.cta-otp');
+        let otp = '';
+        digits.forEach(d => otp += d.value);
+        if (otp.length < 6) return;
+        document.getElementById('ctaOtpState').classList.remove('active');
+        document.getElementById('ctaSuccessState').classList.add('active');
+        const counter = document.getElementById('liveCounter');
+        const current = parseInt(counter.textContent.replace(/,/g, ''));
+        counter.textContent = (current + 1).toLocaleString();
+        showToast();
+    }
+
+    function showToast() {
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 4000);
+    }
+
+    function scrollToWaitlist() {
+        document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // === Live counter simulation ===
+    setInterval(() => {
+        const counter = document.getElementById('liveCounter');
+        const current = parseInt(counter.textContent.replace(/,/g, ''));
+        if (Math.random() > 0.6) {
+            counter.textContent = (current + Math.floor(Math.random() * 3) + 1).toLocaleString();
+        }
+    }, 8000);
+
+    // === Phone input: numbers only ===
+    ['phoneInput', 'ctaPhoneInput'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.addEventListener('input', function() {
+                this.value = this.value.replace(/\D/g, '');
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
